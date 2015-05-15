@@ -12,6 +12,13 @@
     </div>
     <div id="container">
         <h2>Résultats :</h2>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         <p>Utilisateur : {{ username }}</p>
         <p>Adresse email : {{ email }}</p>
         {% if test_list %}
