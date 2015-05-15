@@ -1,2 +1,3 @@
 .vagrant
 *.pyc
+*.sqlite3
