@@ -9,3 +9,6 @@ version:
 
 shell:
 	python swindle/manage.py shell
+
+bootstrap-development:
+	swindle/scripts/bootstrap-development.sh
