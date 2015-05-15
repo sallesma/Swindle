@@ -3,6 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from webapp.models import TestPassword, Host, HostParameter, SwindleTest
 
+
 class TestPasswordInline(admin.StackedInline):
     model = TestPassword
     can_delete = False
@@ -24,6 +25,7 @@ class HostAdmin(admin.ModelAdmin):
     list_display = ('name', 'connection_url', 'success_regexp', 'failure_regexp')
     inlines = (TestHostParameterInline, )
 
+
 class SwindleTestAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
@@ -31,6 +33,7 @@ class SwindleTestAdmin(admin.ModelAdmin):
             return ['result',]
         else: # This is an add
             return []
+
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
