@@ -5,6 +5,10 @@ from django.contrib.auth import authenticate, login as _login, logout as _logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from webapp.models import Host, SwindleTest, TestPassword
+import logging
+
+logger = logging.getLogger("swindle")
+
 
 def index(request):
     return render(request, 'index.html', {})
@@ -29,6 +33,7 @@ def register(request):
     try:
         user = User.objects.create_user(username, email, password)
     except IntegrityError:
+        logger.error("Could not create user : username=%s, email=%s" % (username, email))
         return HttpResponseRedirect("/webapp")
     user.first_name=first_name
     user.last_name=last_name
