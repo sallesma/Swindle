@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'swindle.css' %}">
+<head>
+    <title>Swindle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <div id="header">
+        <h1 class="title">Swindle!</h1>
+    </div>
+    <div id="container">
+        <h2>Résultats :</h2>
+        <p>Utilisateur : {{ username }}</p>
+        <p>Adresse email : {{ email }}</p>
+        {% if test_list %}
+        <table>
+            <tr>
+                <th>Nom du site</th>
+                <th>Résultat</th>
+            </tr>
+                {% for test in test_list %}
+                <tr>
+                    <td>{{ test.host }}</td>
+                    {% if test.result %}
+                        <td class="success">{{ test.result }}</td>
+                    {% else %}
+                        <td class="fail">{{ test.result }}</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+        </table>
+        {% else %}
+            <p>Nous sommes en train de calculer les résultats.</p>
+        {% endif %}
+        <p>Toutes ces informations sont là uniquement pour voir si le choix de mot de passe était vraiment raisonnable à l'inscription.</p>
+        <p>Nous n'allons rien faire avec ces informations (que nous ne consultons d'ailleurs pas).</p>
+    </div>
+    <div id="footer">
+        <a href="/webapp/logout">Déconnexion</a>
+    </div>
+</body>
+</html>

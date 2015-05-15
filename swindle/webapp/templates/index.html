@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'swindle.css' %}">
+<head>
+    <title>Swindle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <div id="header">
+        <h1 class="title">Swindle!</h1>
+    </div>
+    <div id="container">
+        <h1>Connexion</h1>
+        <p>Veuillez vous connecter pour accéder au site :</p>
+        <form action="login/" method="post">
+            {% csrf_token %}
+            <p>Nom d'utilisateur : </p>
+            <input type="text" name="username"/>
+            <p>Mot de passe : </p>
+            <input type="password" name="password"/>
+            <input type="submit" value="Valider"/>
+        </form>
+        <br />
+        <h1>Inscription</h1>
+        <p>Si vous n'êtes pas inscrit, vous pouvez le faire via le formulaire suivant :</p>
+        <form action="register/" method="post">
+            {% csrf_token %}
+            <p>Prénom : </p>
+            <input type="text" name="first_name"/>
+            <p>Nom : </p>
+            <input type="text" name="last_name"/>
+            <p>Adresse mail : </p>
+            <input type="text" name="email"/>
+            <p>Nom d'utilisateur : </p>
+            <input type="text" name="username"/>
+            <p>Mot de passe : </p>
+            <input type="password" name="password"/>
+            <input type="submit" value="Valider"/>
+        </form>
+    </div>
+    <div id="footer">
+    </div>
+</body>
+</html>
