@@ -31,15 +31,6 @@ body {
     border-top-color:#d0d0d0;
 }
 
-#objectToFollow {
-    width:30px;
-    height:30px;
-    background-color:#900000;
-    display:none;
-    margin:auto;
-    z-index:5;
-}
-
 h1.title {
     font-family:serif;
     font-size: 30px;
