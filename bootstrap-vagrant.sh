@@ -19,8 +19,8 @@ sudo pip install djangorestframework
 sudo pip install markdown
 sudo pip install django-filter
 
-# Install Django migration tool
-sudo pip install south
+# Install sqlite3
+sudo apt-get install sqlite3
 
 # Install debug tools
 sudo apt-get -y install curl
