@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login as _login, logout as _logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from webapp.models import Host, SwindleTest, TestPassword
+from webapp.models import TestPassword
 import logging
 
 logger = logging.getLogger("swindle")
@@ -20,7 +20,6 @@ def dashboard(request):
     data = {
         "username": user.username,
         "email": user.email,
-        "test_list": user.swindletest_set.all()
     }
     return render(request, 'dashboard.html', data)
 
