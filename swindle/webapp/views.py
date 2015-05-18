@@ -1,12 +1,9 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect, HttpResponse
-from django.db import IntegrityError
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as _login, logout as _logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from webapp.models import TestPassword, AuthTests
-from webapp.models import AuthTestManager
+from webapp.models import UserManager
 import logging
 
 logger = logging.getLogger("swindle")
@@ -30,27 +27,16 @@ def register(request):
     email = request.POST['email']
     password = request.POST['password']
     
-    try:
-        user = User.objects.create_user(username, email, password)
-    except IntegrityError:
-        logger.error("Could not create user : username=%s, email=%s" % (username, email))
+    manager = UserManager()
+    if manager.create_user(first_name, last_name, username, email, password):
+        user = authenticate(username=username, password=password)
+        _login(request, user)
+        messages.success(request, 'Account created.')
+        return HttpResponseRedirect("/webapp/dashboard")
+    else:
         messages.error(request, 'Could not create user account.')
         return HttpResponseRedirect("/webapp")
-    user.first_name=first_name
-    user.last_name=last_name
-    user.save()
-    test_password = TestPassword(user=user, test_password=password)
-    test_password.save()
-    auth_tests = AuthTests(user=user)
-    auth_tests.save()
 
-    manager = AuthTestManager()
-    manager.test_auth(user)
-
-    user = authenticate(username=username, password=password)
-    _login(request, user)
-    messages.success(request, 'Account created.')
-    return HttpResponseRedirect("/webapp/dashboard")
 
 def login(request):
     username = request.POST['username']
