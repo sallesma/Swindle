@@ -12,3 +12,6 @@ shell:
 
 bootstrap-development:
 	swindle/scripts/bootstrap-development.sh
+
+test:
+	python swindle/manage.py test webapp
