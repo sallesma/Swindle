@@ -6,6 +6,7 @@ sudo apt-get update
 
 # Install git
 sudo apt-get -y install git
+sudo apt-get -y install tig
 
 # Install python pip3
 sudo apt-get -y install python-pip
