@@ -1,0 +1,2 @@
+from webapp.models.testers.swindle_auth_tester import SwindleAuthTester
+from webapp.models.testers.github_auth_tester import GithubAuthTester

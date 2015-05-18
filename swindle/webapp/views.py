@@ -5,7 +5,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login as _login, logout as _logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from webapp.models import TestPassword
+from webapp.models import TestPassword, AuthTests
+from webapp.models import AuthTestManager
 import logging
 
 logger = logging.getLogger("swindle")
@@ -18,8 +19,7 @@ def index(request):
 def dashboard(request):
     user = request.user
     data = {
-        "username": user.username,
-        "email": user.email,
+        "user": user,
     }
     return render(request, 'dashboard.html', data)
 
@@ -41,6 +41,11 @@ def register(request):
     user.save()
     test_password = TestPassword(user=user, test_password=password)
     test_password.save()
+    auth_tests = AuthTests(user=user)
+    auth_tests.save()
+
+    manager = AuthTestManager()
+    manager.test_auth(user)
 
     user = authenticate(username=username, password=password)
     _login(request, user)

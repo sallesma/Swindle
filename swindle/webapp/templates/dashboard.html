@@ -25,29 +25,31 @@
             {% endfor %}
         </ul>
         {% endif %}
-        <p>Utilisateur : {{ username }}</p>
-        <p>Adresse email : {{ email }}</p>
+        <p>Utilisateur : {{ user.username }}</p>
+        <p>Adresse email : {{ user.email }}</p>
         <h2>Résultats :</h2>
-        {% if test_list %}
         <table class="table table-hover">
             <tr>
                 <th>Nom du site</th>
                 <th>Résultat</th>
             </tr>
-            {% for test in test_list %}
             <tr>
-                <td>{{ test.host }}</td>
-                {% if test.result %}
-                    <td class="success">{{ test.result }}</td>
+                <td>Swindle</td>
+                {% if user.authtests.swindle_auth %}
+                    <td class="text-success">{{ user.authtests.swindle_auth }}</td>
                 {% else %}
-                    <td class="danger">{{ test.result }}</td>
+                    <td class="text-danger">{{ user.authtests.swindle_auth }}</td>
                 {% endif %}
             </tr>
-            {% endfor %}
+            <tr>
+                <td>Github</td>
+                {% if user.authtests.github_auth %}
+                    <td class="text-success">{{ user.authtests.github_auth }}</td>
+                {% else %}
+                    <td class="text-danger">{{ user.authtests.github_auth }}</td>
+                {% endif %}
+            </tr>
         </table>
-        {% else %}
-            <em>Nous sommes en train de calculer les résultats.</em>
-        {% endif %}
         <p>Toutes ces informations sont là uniquement pour voir si le choix de mot de passe était vraiment raisonnable à l'inscription.</p>
         <p>Nous n'allons rien faire avec ces informations (que nous ne consultons d'ailleurs pas).</p>
     </div>
