@@ -1,0 +1,1 @@
+from test_swindle_auth_tester import SwindleAuthTesterTest
