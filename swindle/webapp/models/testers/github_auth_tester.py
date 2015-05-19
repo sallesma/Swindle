@@ -1,9 +1,14 @@
+from github import Github
+from github.GithubException import BadCredentialsException
 import logging
 
 logger = logging.getLogger("swindle")
 
 
-class GithubAuthTester(object):
+class GithubAuthTester():
     def can_auth(self, user):
-        logger.info("Github Auth")
-        return False
+        try:
+            Github(user.username, user.testpassword.test_password).get_user(user.username)
+        except BadCredentialsException:
+            return False
+        return True

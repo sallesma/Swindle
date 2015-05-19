@@ -22,5 +22,8 @@ sudo pip install django-filter
 # Install sqlite3
 sudo apt-get install sqlite3
 
+#Install python Github librairie
+sudo pip install PyGithub
+
 # Install debug tools
 sudo apt-get -y install curl

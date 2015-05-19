@@ -1,0 +1,13 @@
+# Valid Github user
+- model: auth.User
+  pk: 101
+  fields:
+    first_name: firstname
+    last_name: lastname
+    username: username
+    email: email
+- model: webapp.TestPassword
+  pk: 101
+  fields:
+    user: 101
+    test_password: password
