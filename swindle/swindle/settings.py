@@ -68,6 +68,10 @@ TEMPLATES = [
     },
 ]
 
+FIXTURE_DIRS = (
+   '/fixtures/',
+)
+
 WSGI_APPLICATION = 'swindle.wsgi.application'
 
 

@@ -6,13 +6,12 @@ from webapp.models.testers import SwindleAuthTester
 
 # Create your tests here.
 class SwindleAuthTesterTest(TestCase):
+    fixtures = ['users']
 
     def test_registered_user(self):
         """
         Should return true for a registered user
         """
-        manager = UserManager()
-        manager.create_user("a", "a", "a", "a", "a")
         user = User.objects.get(username="a")
 
         tester = SwindleAuthTester()

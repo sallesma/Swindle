@@ -1,0 +1,21 @@
+[
+  {
+    "model": "auth.User",
+    "pk": 1,
+    "fields": {
+      "first_name": "a",
+      "last_name": "a",
+      "username": "a",
+      "email": "a",
+      "password": "pbkdf2_sha256$20000$R2CBKvI2hvwj$MzxItdDqnWHoPVLIty84Io8a4rwEhJC21H2fcoFhG4o="
+    }
+  },
+  {
+    "model": "webapp.TestPassword",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "test_password": "a"
+    }
+  }
+]
