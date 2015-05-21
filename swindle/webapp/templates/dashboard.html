@@ -1,71 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
-<head>
-    <title>Swindle</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Swindle</a>
-          </div>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="/webapp/logout">Déconnexion</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container -->
-    </nav>
-    <div class="container">
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        <div class="col-md-3">
-            <p>Utilisateur : {{ user.username }}</p>
-            <p>Prénom : {{ user.first_name }}</p>
-            <p>Nom : {{ user.last_name }}</p>
-            <p>Adresse email : {{ user.email }}</p>
-        </div>
-        <div class="col-md-9">
-            <h2>Résultats :</h2>
-            <table class="table table-hover">
-                <tr>
-                    <th>Nom du site</th>
-                    <th>Résultat</th>
-                </tr>
-                <tr>
-                    <td>Swindle</td>
-                    {% if user.authtests.swindle_auth %}
-                        <td class="text-success">{{ user.authtests.swindle_auth }}</td>
-                    {% else %}
-                        <td class="text-danger">{{ user.authtests.swindle_auth }}</td>
-                    {% endif %}
-                </tr>
-                <tr>
-                    <td>Github</td>
-                    {% if user.authtests.github_auth %}
-                        <td class="text-success">{{ user.authtests.github_auth }}</td>
-                    {% else %}
-                        <td class="text-danger">{{ user.authtests.github_auth }}</td>
-                    {% endif %}
-                </tr>
-                <tr>
-                    <td>Trello</td>
-                    {% if user.authtests.trello_auth %}
-                        <td class="text-success">{{ user.authtests.trello_auth }}</td>
-                    {% else %}
-                        <td class="text-danger">{{ user.authtests.trello_auth }}</td>
-                    {% endif %}
-                </tr>
-            </table>
-            <p>Toutes ces informations sont là uniquement pour voir si le choix de mot de passe était vraiment raisonnable à l'inscription.</p>
-            <p>Nous n'allons rien faire avec ces informations (que nous ne consultons d'ailleurs pas).</p>
-        </div>
+{% extends "base.html" %}
+{% block title %}Swindle - Dashboard{% endblock %}
+
+{% block nav %}
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/webapp/logout">Déconnexion</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-3">
+        <p>Utilisateur : {{ user.username }}</p>
+        <p>Prénom : {{ user.first_name }}</p>
+        <p>Nom : {{ user.last_name }}</p>
+        <p>Adresse email : {{ user.email }}</p>
     </div>
-</body>
-</html>
+    <div class="col-md-9">
+        <h2>Résultats :</h2>
+        <table class="table table-hover">
+            <tr>
+                <th>Nom du site</th>
+                <th>Résultat</th>
+            </tr>
+            <tr>
+                <td>Swindle</td>
+                {% if user.authtests.swindle_auth %}
+                    <td class="text-success">{{ user.authtests.swindle_auth }}</td>
+                {% else %}
+                    <td class="text-danger">{{ user.authtests.swindle_auth }}</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td>Github</td>
+                {% if user.authtests.github_auth %}
+                    <td class="text-success">{{ user.authtests.github_auth }}</td>
+                {% else %}
+                    <td class="text-danger">{{ user.authtests.github_auth }}</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td>Trello</td>
+                {% if user.authtests.trello_auth %}
+                    <td class="text-success">{{ user.authtests.trello_auth }}</td>
+                {% else %}
+                    <td class="text-danger">{{ user.authtests.trello_auth }}</td>
+                {% endif %}
+            </tr>
+        </table>
+        <p>Toutes ces informations sont là uniquement pour voir si le choix de mot de passe était vraiment raisonnable à l'inscription.</p>
+        <p>Nous n'allons rien faire avec ces informations (que nous ne consultons d'ailleurs pas).</p>
+    </div>
+{% endblock %}

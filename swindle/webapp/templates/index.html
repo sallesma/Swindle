@@ -1,89 +1,67 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
-<head>
-    <title>Swindle</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Swindle</a>
-          </div>
-        </div><!--/.container -->
-    </nav>
-    <div class="container">
-        <h1>Connexion</h1>
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        <p>Veuillez vous connecter pour accéder au site :</p>
-        <form class="form-horizontal" action="login/" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="username" class="col-sm-2 control-label">Username</label>
-                <div class="col-sm-4">
-                  <input type="text" name="username" class="form-control" placeholder="Username">
-                </div>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Connexion</h1>
+    <p>Veuillez vous connecter pour accéder au site :</p>
+    <form class="form-horizontal" action="login/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username" class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-4">
+              <input type="text" name="username" class="form-control" placeholder="Username">
             </div>
-            <div class="form-group">
-                <label for="password" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-4">
-                  <input type="password" name="password" class="form-control" placeholder="Password">
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-4">
+              <input type="password" name="password" class="form-control" placeholder="Password">
             </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-4">
-                  <button type="submit" class="btn btn-default">Sign in</button>
-                </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+              <button type="submit" class="btn btn-default">Sign in</button>
             </div>
-        </form>
-        <br />
-        <h1>Inscription</h1>
-        <p>Si vous n'êtes pas inscrit, vous pouvez le faire via le formulaire suivant :</p>
-        <form class="form-horizontal" action="register/" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="first_name" class="col-sm-2 control-label">First Name</label>
-                <div class="col-sm-4">
-                  <input type="text" name="first_name" class="form-control" placeholder="First Name">
-                </div>
+        </div>
+    </form>
+    <br />
+    <h1>Inscription</h1>
+    <p>Si vous n'êtes pas inscrit, vous pouvez le faire via le formulaire suivant :</p>
+    <form class="form-horizontal" action="register/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="first_name" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-4">
+              <input type="text" name="first_name" class="form-control" placeholder="First Name">
             </div>
-            <div class="form-group">
-                <label for="last_name" class="col-sm-2 control-label">Last Name</label>
-                <div class="col-sm-4">
-                  <input type="text" name="last_name" class="form-control" placeholder="Last Name">
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="last_name" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-4">
+              <input type="text" name="last_name" class="form-control" placeholder="Last Name">
             </div>
-            <div class="form-group">
-                <label for="email" class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-4">
-                  <input type="text" name="email" class="form-control" placeholder="Email">
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-4">
+              <input type="text" name="email" class="form-control" placeholder="Email">
             </div>
-            <div class="form-group">
-                <label for="username" class="col-sm-2 control-label">Username</label>
-                <div class="col-sm-4">
-                  <input type="text" name="username" class="form-control" placeholder="Username">
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="username" class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-4">
+              <input type="text" name="username" class="form-control" placeholder="Username">
             </div>
-            <div class="form-group">
-                <label for="password" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-4">
-                  <input type="password" name="password" class="form-control" placeholder="Password">
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-4">
+              <input type="password" name="password" class="form-control" placeholder="Password">
             </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-4">
-                  <button type="submit" class="btn btn-default">Sign in</button>
-                </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+              <button type="submit" class="btn btn-default">Sign in</button>
             </div>
-        </form>
-    </div>
-</body>
-</html>
+        </div>
+    </form>
+{% endblock %}
