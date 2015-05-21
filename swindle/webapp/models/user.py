@@ -10,3 +10,4 @@ class AuthTests(models.Model):
     user = models.OneToOneField(User)
     swindle_auth = models.NullBooleanField(default=None)
     github_auth = models.NullBooleanField(default=None)
+    trello_auth = models.NullBooleanField(default=None)
