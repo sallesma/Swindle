@@ -12,7 +12,7 @@ logger = logging.getLogger("swindle")
 def index(request):
     return render(request, 'index.html', {})
 
-@login_required(login_url="/webapp/")
+@login_required(login_url="/")
 def dashboard(request):
     user = request.user
     data = {
@@ -20,7 +20,7 @@ def dashboard(request):
     }
     return render(request, 'dashboard.html', data)
 
-@login_required(login_url="/webapp/")
+@login_required(login_url="/")
 def refresh(request):
     user = request.user
     manager = UserManager()
@@ -43,10 +43,10 @@ def register(request):
         user = authenticate(username=username, password=password)
         _login(request, user)
         messages.success(request, 'Account created.')
-        return HttpResponseRedirect("/webapp/dashboard")
+        return HttpResponseRedirect("/dashboard")
     else:
         messages.error(request, 'Could not create user account.')
-        return HttpResponseRedirect("/webapp")
+        return HttpResponseRedirect("/")
 
 
 def login(request):
@@ -56,10 +56,10 @@ def login(request):
     user = authenticate(username=username, password=password)
     if user is None:
         messages.error(request, 'Bad credentials.')
-        return HttpResponseRedirect("/webapp")
+        return HttpResponseRedirect("/")
     _login(request, user)
-    return HttpResponseRedirect("/webapp/dashboard")
+    return HttpResponseRedirect("/dashboard")
 
 def logout(request):
     _logout(request)
-    return HttpResponseRedirect("/webapp")
+    return HttpResponseRedirect("/")
