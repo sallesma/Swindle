@@ -8,8 +8,9 @@ import logging
 
 logger = logging.getLogger("swindle")
 
-
 def index(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect("/dashboard")
     return render(request, 'index.html', {})
 
 @login_required(login_url="/")
