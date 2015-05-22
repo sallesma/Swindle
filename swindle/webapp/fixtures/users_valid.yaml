@@ -4,10 +4,44 @@
   fields:
     first_name: firstname
     last_name: lastname
-    username: username
+    username: usernamegithub
     email: email
-- model: webapp.TestPassword
+- model: webapp.TestData
   pk: 101
   fields:
     user: 101
-    test_password: password
+    password: password
+    username: username
+    email: email
+
+# Valid Trello user
+- model: auth.User
+  pk: 102
+  fields:
+    first_name: firstname
+    last_name: lastname
+    username: usernametrello
+    email: email
+- model: webapp.TestData
+  pk: 102
+  fields:
+    user: 102
+    password: password
+    username: username
+    email: email
+
+# Valid Linkedin user
+- model: auth.User
+  pk: 103
+  fields:
+    first_name: firstname
+    last_name: lastname
+    username: usernamelinkedin
+    email: email
+- model: webapp.TestData
+  pk: 103
+  fields:
+    user: 103
+    password: password
+    username: username
+    email: email

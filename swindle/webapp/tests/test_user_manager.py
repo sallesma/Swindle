@@ -26,7 +26,9 @@ class UserManagerTest(TestCase):
         self.assertEqual(last_name, user.last_name)
         self.assertEqual(username, user.username)
         self.assertEqual(email, user.email)
-        self.assertEqual(password, user.testpassword.test_password)
+        self.assertEqual(password, user.testdata.password)
+        self.assertEqual(username, user.testdata.username)
+        self.assertEqual(email, user.testdata.email)
         self.assertNotEqual(user.authtests, None)
 
     def test_create_user_same_username(self):

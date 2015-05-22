@@ -15,8 +15,8 @@ class LinkedinAuthTester():
         driver.get("https://www.linkedin.com/nhome/")
         driver.implicitly_wait(1)
 
-        driver.find_element_by_name("session_key").send_keys(user.email)
-        driver.find_element_by_name("session_password").send_keys(user.testpassword.test_password)
+        driver.find_element_by_name("session_key").send_keys(user.testdata.email)
+        driver.find_element_by_name("session_password").send_keys(user.testdata.password)
         driver.find_element_by_name("signin").click()
         try:
             a = WebDriverWait(driver, 10).until(

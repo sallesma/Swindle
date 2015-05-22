@@ -2,9 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class TestPassword(models.Model):
+class TestData(models.Model):
     user = models.OneToOneField(User)
-    test_password = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    username = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
 
 class AuthTests(models.Model):
     user = models.OneToOneField(User)

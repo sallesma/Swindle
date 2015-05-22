@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-from webapp.models import TestPassword, AuthTests
+from webapp.models import TestData, AuthTests
 from webapp.models import AuthTestManager
 import logging
 
@@ -19,8 +19,8 @@ class UserManager:
         user.last_name=last_name
         user.save()
 
-        test_password = TestPassword(user=user, test_password=password)
-        test_password.save()
+        test_data = TestData(user=user, password=password, username=username, email=email)
+        test_data.save()
         auth_tests = AuthTests(user=user)
         auth_tests.save()
 

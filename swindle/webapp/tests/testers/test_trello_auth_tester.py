@@ -1,7 +1,5 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from webapp.models import UserManager
-from webapp.models import TestPassword
 from webapp.models.testers import TrelloAuthTester
 
 
@@ -22,7 +20,7 @@ class TrelloAuthTesterTest(TestCase):
         """
         Should return false for a valid trello user
         """
-        user = User.objects.get(id=101)
+        user = User.objects.get(id=102)
 
         tester = TrelloAuthTester()
         self.assertTrue(tester.can_auth(user))

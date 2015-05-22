@@ -1,7 +1,5 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from webapp.models import UserManager
-from webapp.models import TestPassword
 from webapp.models.testers import GithubAuthTester
 
 

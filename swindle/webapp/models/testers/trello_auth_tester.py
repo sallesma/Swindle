@@ -15,8 +15,8 @@ class TrelloAuthTester():
         driver.get("https://trello.com/login")
         driver.implicitly_wait(1)
 
-        driver.find_element_by_id("user").send_keys(user.username)
-        driver.find_element_by_id("password").send_keys(user.testpassword.test_password)
+        driver.find_element_by_id("user").send_keys(user.testdata.username)
+        driver.find_element_by_id("password").send_keys(user.testdata.password)
         driver.find_element_by_id("login").click()
 
         try:
