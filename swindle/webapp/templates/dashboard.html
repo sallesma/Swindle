@@ -9,10 +9,12 @@
 
 {% block content %}
     <div class="col-md-3">
+        <h2>Profile :</h2>
         <p>Utilisateur : {{ user.username }}</p>
         <p>Prénom : {{ user.first_name }}</p>
         <p>Nom : {{ user.last_name }}</p>
         <p>Adresse email : {{ user.email }}</p>
+        <a class="btn btn-success" href="/webapp/refresh">Refresh your profile</a>
     </div>
     <div class="col-md-9">
         <h2>Résultats :</h2>

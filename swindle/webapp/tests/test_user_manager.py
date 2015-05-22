@@ -18,7 +18,7 @@ class UserManagerTest(TestCase):
         password = "b"
 
         manager = UserManager()
-        result = manager.create_user(first_name, last_name, username, email, password)
+        result = manager.create(first_name, last_name, username, email, password)
         self.assertTrue(result)
 
         user = User.objects.get(username=username)
@@ -42,5 +42,5 @@ class UserManagerTest(TestCase):
         password = "a"
 
         manager = UserManager()
-        result = manager.create_user(first_name, last_name, username, email, password)
+        result = manager.create(first_name, last_name, username, email, password)
         self.assertFalse(result)

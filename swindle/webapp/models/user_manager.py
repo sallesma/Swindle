@@ -8,7 +8,7 @@ logger = logging.getLogger("swindle")
 
 
 class UserManager:
-    def create_user(self, first_name, last_name, username, email, password):
+    def create(self, first_name, last_name, username, email, password):
         try:
             user = User.objects.create_user(username, email, password)
         except IntegrityError:
@@ -27,3 +27,7 @@ class UserManager:
         manager = AuthTestManager()
         manager.test_auth(user)
         return True
+
+    def refresh(self, user):
+        manager = AuthTestManager()
+        manager.test_auth(user)

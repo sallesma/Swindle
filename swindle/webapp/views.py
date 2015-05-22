@@ -20,6 +20,17 @@ def dashboard(request):
     }
     return render(request, 'dashboard.html', data)
 
+@login_required(login_url="/webapp/")
+def refresh(request):
+    user = request.user
+    manager = UserManager()
+    manager.refresh(user)
+
+    data = {
+        "user": user,
+    }
+    return render(request, 'dashboard.html', data)
+
 def register(request):
     username = request.POST['username']
     first_name = request.POST['first_name']
@@ -28,7 +39,7 @@ def register(request):
     password = request.POST['password']
     
     manager = UserManager()
-    if manager.create_user(first_name, last_name, username, email, password):
+    if manager.create(first_name, last_name, username, email, password):
         user = authenticate(username=username, password=password)
         _login(request, user)
         messages.success(request, 'Account created.')
