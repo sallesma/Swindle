@@ -11,3 +11,4 @@ class AuthTests(models.Model):
     swindle_auth = models.NullBooleanField(default=None)
     github_auth = models.NullBooleanField(default=None)
     trello_auth = models.NullBooleanField(default=None)
+    linkedin_auth = models.NullBooleanField(default=None)

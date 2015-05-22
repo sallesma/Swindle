@@ -9,19 +9,18 @@ import logging
 logger = logging.getLogger("swindle")
 
 
-class TrelloAuthTester():
+class LinkedinAuthTester():
     def can_auth(self, user):
         driver = webdriver.Firefox()
-        driver.get("https://trello.com/login")
+        driver.get("https://www.linkedin.com/nhome/")
         driver.implicitly_wait(1)
 
-        driver.find_element_by_id("user").send_keys(user.username)
-        driver.find_element_by_id("password").send_keys(user.testpassword.test_password)
-        driver.find_element_by_id("login").click()
-
+        driver.find_element_by_name("session_key").send_keys(user.email)
+        driver.find_element_by_name("session_password").send_keys(user.testpassword.test_password)
+        driver.find_element_by_name("signin").click()
         try:
             a = WebDriverWait(driver, 10).until(
-                    EC.presence_of_element_located((By.CLASS_NAME, "header-boards"))
+                    EC.presence_of_element_located((By.CLASS_NAME, "account-settings-tab"))
             )
             driver.close()
             return True

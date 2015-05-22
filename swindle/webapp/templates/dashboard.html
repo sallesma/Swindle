@@ -45,6 +45,14 @@
                     <td class="text-danger">{{ user.authtests.trello_auth }}</td>
                 {% endif %}
             </tr>
+            <tr>
+                <td>Linkedin</td>
+                {% if user.authtests.linkedin_auth %}
+                    <td class="text-success">{{ user.authtests.linkedin_auth }}</td>
+                {% else %}
+                    <td class="text-danger">{{ user.authtests.linkedin_auth }}</td>
+                {% endif %}
+            </tr>
         </table>
         <p>Toutes ces informations sont là uniquement pour voir si le choix de mot de passe était vraiment raisonnable à l'inscription.</p>
         <p>Nous n'allons rien faire avec ces informations (que nous ne consultons d'ailleurs pas).</p>

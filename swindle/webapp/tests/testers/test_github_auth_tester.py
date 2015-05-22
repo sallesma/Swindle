@@ -4,7 +4,7 @@ from webapp.models import UserManager
 from webapp.models import TestPassword
 from webapp.models.testers import GithubAuthTester
 
-# Create your tests here.
+
 class GithubAuthTesterTest(TestCase):
     fixtures = ['users', 'users_valid']
 

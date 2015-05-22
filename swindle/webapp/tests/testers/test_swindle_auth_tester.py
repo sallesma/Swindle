@@ -4,7 +4,7 @@ from webapp.models import UserManager
 from webapp.models import TestPassword
 from webapp.models.testers import SwindleAuthTester
 
-# Create your tests here.
+
 class SwindleAuthTesterTest(TestCase):
     fixtures = ['users']
 

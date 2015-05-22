@@ -1,3 +1,4 @@
 from webapp.models.testers.swindle_auth_tester import SwindleAuthTester
 from webapp.models.testers.github_auth_tester import GithubAuthTester
 from webapp.models.testers.trello_auth_tester import TrelloAuthTester
+from webapp.models.testers.linkedin_auth_tester import LinkedinAuthTester
