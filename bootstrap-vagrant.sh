@@ -30,12 +30,15 @@ sudo pip install PyGithub
 
 # Requirements for headless Selenium tests
 sudo apt-get install -y xvfb firefox xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
-
 #Install selenium
 sudo pip install selenium
-
 # Virtual display for the Selenium tests
 if ! grep -q "DISPLAY=:99" /home/vagrant/.profile
 then
     echo "export DISPLAY=:99" >> /home/vagrant/.profile
 fi
+
+#Install Celery
+sudo pip install celery
+#Install RabbitMQ for Celery
+sudo apt-get install -y rabbitmq-server
