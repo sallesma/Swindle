@@ -26,11 +26,7 @@ def refresh(request):
     user = request.user
     manager = UserManager()
     manager.refresh(user)
-
-    data = {
-        "user": user,
-    }
-    return render(request, 'dashboard.html', data)
+    return HttpResponseRedirect("/dashboard")
 
 def register(request):
     username = request.POST['username']
