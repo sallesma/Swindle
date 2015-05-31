@@ -45,3 +45,19 @@
     password: password
     username: username
     email: email
+
+# Valid Facebook user
+- model: auth.User
+  pk: 104
+  fields:
+    first_name: firstname
+    last_name: lastname
+    username: usernamefacebook
+    email: email
+- model: webapp.TestData
+  pk: 104
+  fields:
+    user: 104
+    password: password
+    username: username
+    email: email
