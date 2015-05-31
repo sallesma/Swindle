@@ -16,11 +16,6 @@ sudo apt-get -y install python-pip
 # Install django package
 sudo pip install django
 
-# Install Django REST Framework
-sudo pip install djangorestframework
-sudo pip install markdown
-sudo pip install django-filter
-
 # Install sqlite3
 sudo apt-get install sqlite3
 
