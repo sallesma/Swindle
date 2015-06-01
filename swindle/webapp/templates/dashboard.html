@@ -20,11 +20,13 @@
         <h2>Résultats :</h2>
         <table class="table table-hover">
             <tr>
-                <th>Nom du site</th>
+                <th>Site web</th>
                 <th>Résultat</th>
             </tr>
             <tr>
-                <td>Swindle</td>
+                <td>
+                    Swindle
+                </td>
                 {% if user.authtests.swindle_auth %}
                     <td class="text-success">{{ user.authtests.swindle_auth }}</td>
                 {% else %}
@@ -32,7 +34,10 @@
                 {% endif %}
             </tr>
             <tr>
-                <td>Github</td>
+                <td>
+                    <img src="https://assets-cdn.github.com/favicon.ico">
+                    Github
+                </td>
                 {% if user.authtests.github_auth %}
                     <td class="text-success">{{ user.authtests.github_auth }}</td>
                 {% else %}
@@ -40,7 +45,10 @@
                 {% endif %}
             </tr>
             <tr>
-                <td>Trello</td>
+                <td>
+                    <img src="http://d33v4339jhl8k0.cloudfront.net/docs/assets/545804d8e4b09c5ca72525ce/images/5481e04ee4b02581e496de7a/favicon.ico">
+                    Trello
+                </td>
                 {% if user.authtests.trello_auth %}
                     <td class="text-success">{{ user.authtests.trello_auth }}</td>
                 {% else %}
@@ -48,7 +56,10 @@
                 {% endif %}
             </tr>
             <tr>
-                <td>Linkedin</td>
+                <td>
+                    <img src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico">
+                    Linkedin
+                </td>
                 {% if user.authtests.linkedin_auth %}
                     <td class="text-success">{{ user.authtests.linkedin_auth }}</td>
                 {% else %}
@@ -56,7 +67,10 @@
                 {% endif %}
             </tr>
             <tr>
-                <td>Facebook</td>
+                <td>
+                    <img src="https://fbstatic-a.akamaihd.net/rsrc.php/yV/r/hzMapiNYYpW.ico">
+                    Facebook
+                </td>
                 {% if user.authtests.facebook_auth %}
                     <td class="text-success">{{ user.authtests.facebook_auth }}</td>
                 {% else %}
