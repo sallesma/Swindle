@@ -15,3 +15,4 @@ class AuthTests(models.Model):
     trello_auth = models.NullBooleanField(default=None)
     linkedin_auth = models.NullBooleanField(default=None)
     facebook_auth = models.NullBooleanField(default=None)
+    twitter_auth = models.NullBooleanField(default=None)

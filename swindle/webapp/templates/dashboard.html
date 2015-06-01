@@ -77,6 +77,17 @@
                     <td class="text-danger">{{ user.authtests.facebook_auth }}</td>
                 {% endif %}
             </tr>
+            <tr>
+                <td>
+                    <img src="http://abs.twimg.com/favicons/favicon.ico">
+                    Twitter
+                </td>
+                {% if user.authtests.twitter_auth %}
+                    <td class="text-success">{{ user.authtests.twitter_auth }}</td>
+                {% else %}
+                    <td class="text-danger">{{ user.authtests.twitter_auth }}</td>
+                {% endif %}
+            </tr>
         </table>
         <p>Toutes ces informations sont là uniquement pour voir si le choix de mot de passe était vraiment raisonnable à l'inscription.</p>
         <p>Nous n'allons rien faire avec ces informations (que nous ne consultons d'ailleurs pas).</p>
