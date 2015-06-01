@@ -3,25 +3,25 @@
 
 {% block nav %}
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout">Déconnexion</a></li>
+        <li><a href="/logout">Sign out</a></li>
     </ul>
 {% endblock %}
 
 {% block content %}
     <div class="col-md-3">
         <h2>Profile :</h2>
-        <p>Utilisateur : {{ user.username }}</p>
-        <p>Prénom : {{ user.first_name }}</p>
-        <p>Nom : {{ user.last_name }}</p>
-        <p>Adresse email : {{ user.email }}</p>
+        <p>Username : {{ user.username }}</p>
+        <p>First name : {{ user.first_name }}</p>
+        <p>Last name : {{ user.last_name }}</p>
+        <p>Email address : {{ user.email }}</p>
         <a class="btn btn-success" href="/refresh">Refresh your profile</a>
     </div>
     <div class="col-md-9">
-        <h2>Résultats :</h2>
+        <h2>Results :</h2>
         <table class="table table-hover">
             <tr>
-                <th>Site web</th>
-                <th>Résultat</th>
+                <th>Website</th>
+                <th>Could sign in?</th>
             </tr>
             <tr>
                 <td>
@@ -95,7 +95,6 @@
                 {{ user.authtests.twitter_auth }}</td>
             </tr>
         </table>
-        <p>Toutes ces informations sont là uniquement pour voir si le choix de mot de passe était vraiment raisonnable à l'inscription.</p>
-        <p>Nous n'allons rien faire avec ces informations (que nous ne consultons d'ailleurs pas).</p>
+        <p>We're not doing anything with this information. It's just for you to consult (and think about).</p>
     </div>
 {% endblock %}
