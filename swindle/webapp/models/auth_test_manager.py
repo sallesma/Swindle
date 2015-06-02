@@ -1,10 +1,10 @@
-from testers.swindle_auth_tester import SwindleAuthTester
-from testers.github_auth_tester import GithubAuthTester
-from testers.trello_auth_tester import TrelloAuthTester
-from testers.linkedin_auth_tester import LinkedinAuthTester
-from testers.facebook_auth_tester import FacebookAuthTester
-from testers.twitter_auth_tester import TwitterAuthTester
-from testers.google_auth_tester import GoogleAuthTester
+from testers import SwindleAuthTester
+from testers import GithubAuthTester
+from testers import TrelloAuthTester
+from testers import LinkedinAuthTester
+from testers import FacebookAuthTester
+from testers import TwitterAuthTester
+from testers import GoogleAuthTester
 import logging
 
 logger = logging.getLogger("swindle")
