@@ -77,3 +77,19 @@
     password: password
     username: username
     email: email
+
+# Valid Google user
+- model: auth.User
+  pk: 106
+  fields:
+    first_name: firstname
+    last_name: lastname
+    username: usernamegoogle
+    email: email
+- model: webapp.TestData
+  pk: 106
+  fields:
+    user: 106
+    password: password
+    username: username
+    email: email

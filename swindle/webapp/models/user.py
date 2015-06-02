@@ -16,3 +16,4 @@ class AuthTests(models.Model):
     linkedin_auth = models.NullBooleanField(default=None)
     facebook_auth = models.NullBooleanField(default=None)
     twitter_auth = models.NullBooleanField(default=None)
+    google_auth = models.NullBooleanField(default=None)

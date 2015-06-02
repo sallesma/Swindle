@@ -94,6 +94,18 @@
                 {% endif %}
                 {{ user.authtests.twitter_auth }}</td>
             </tr>
+            <tr>
+                <td>
+                    <img src="http://www.google.com/favicon.ico">
+                    Google
+                </td>
+                {% if user.authtests.google_auth %}
+                    <td class="text-success">
+                {% else %}
+                    <td class="text-danger">
+                {% endif %}
+                {{ user.authtests.google_auth }}</td>
+            </tr>
         </table>
         <p>We're not doing anything with this information. It's just for you to consult (and think about).</p>
     </div>
