@@ -13,7 +13,7 @@ class UserManager:
         try:
             user = User.objects.create_user(username, email, password)
         except IntegrityError:
-            logger.error("Could not create user : username=%s, email=%s" % (username, email))
+            logger.info("Could not create user : username=%s, email=%s" % (username, email))
             return False
 
         user.first_name=first_name
