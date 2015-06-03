@@ -17,3 +17,4 @@ class AuthTests(models.Model):
     facebook_auth = models.NullBooleanField(default=None)
     twitter_auth = models.NullBooleanField(default=None)
     google_auth = models.NullBooleanField(default=None)
+    dropbox_auth = models.NullBooleanField(default=None)

@@ -5,3 +5,4 @@ from webapp.models.testers.linkedin_auth_tester import LinkedinAuthTester
 from webapp.models.testers.facebook_auth_tester import FacebookAuthTester
 from webapp.models.testers.twitter_auth_tester import TwitterAuthTester
 from webapp.models.testers.google_auth_tester import GoogleAuthTester
+from webapp.models.testers.dropbox_auth_tester import DropboxAuthTester

@@ -106,6 +106,18 @@
                 {% endif %}
                 {{ user.authtests.google_auth }}</td>
             </tr>
+            <tr>
+                <td>
+                    <img src="https://cf.dropboxstatic.com/static/images/favicon-vflk5FiAC.ico">
+                    Dropbox
+                </td>
+                {% if user.authtests.dropbox_auth %}
+                    <td class="text-success">
+                {% else %}
+                    <td class="text-danger">
+                {% endif %}
+                {{ user.authtests.dropbox_auth }}</td>
+            </tr>
         </table>
         <p>We're not doing anything with this information. It's just for you to consult (and think about).</p>
     </div>

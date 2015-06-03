@@ -93,3 +93,19 @@
     password: password
     username: username
     email: email
+
+# Valid Dropbox user
+- model: auth.User
+  pk: 107
+  fields:
+    first_name: firstname
+    last_name: lastname
+    username: usernamedropbox
+    email: email
+- model: webapp.TestData
+  pk: 107
+  fields:
+    user: 107
+    password: password
+    username: username
+    email: email
