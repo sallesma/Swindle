@@ -118,6 +118,18 @@
                 {% endif %}
                 {{ user.authtests.dropbox_auth }}</td>
             </tr>
+            <tr>
+                <td>
+                    <img src="https://s.yimg.com/rz/l/favicon.ico">
+                    Yahoo
+                </td>
+                {% if user.authtests.yahoo_auth %}
+                    <td class="text-success">
+                {% else %}
+                    <td class="text-danger">
+                {% endif %}
+                {{ user.authtests.yahoo_auth }}</td>
+            </tr>
         </table>
         <p>We're not doing anything with this information. It's just for you to consult (and think about).</p>
     </div>
