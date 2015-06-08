@@ -130,6 +130,18 @@
                 {% endif %}
                 {{ user.authtests.yahoo_auth }}</td>
             </tr>
+            <tr>
+                <td>
+                    <img src="https://auth.gfx.ms/16.000.25666.00/favicon.ico?v=2">
+                    Live
+                </td>
+                {% if user.authtests.live_auth %}
+                    <td class="text-success">
+                {% else %}
+                    <td class="text-danger">
+                {% endif %}
+                {{ user.authtests.live_auth }}</td>
+            </tr>
         </table>
         <p>We're not doing anything with this information. It's just for you to consult (and think about).</p>
     </div>

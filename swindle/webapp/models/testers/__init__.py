@@ -7,3 +7,4 @@ from webapp.models.testers.twitter_auth_tester import TwitterAuthTester
 from webapp.models.testers.google_auth_tester import GoogleAuthTester
 from webapp.models.testers.dropbox_auth_tester import DropboxAuthTester
 from webapp.models.testers.yahoo_auth_tester import YahooAuthTester
+from webapp.models.testers.live_auth_tester import LiveAuthTester

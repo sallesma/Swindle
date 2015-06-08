@@ -125,3 +125,19 @@
     password: password
     username: username
     email: email
+
+# Valid Live user
+- model: auth.User
+  pk: 109
+  fields:
+    first_name: firstname
+    last_name: lastname
+    username: usernamelive
+    email: email
+- model: webapp.TestData
+  pk: 109
+  fields:
+    user: 109
+    password: password
+    username: username
+    email: email
