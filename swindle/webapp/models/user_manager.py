@@ -2,7 +2,6 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from webapp.models import TestData, AuthTests
 from webapp.models import AuthTestManager
-from webapp.tasks import test
 import logging
 
 logger = logging.getLogger("swindle")
@@ -25,10 +24,8 @@ class UserManager:
         auth_tests = AuthTests(user=user)
         auth_tests.save()
 
-        manager = AuthTestManager()
-        test.delay(manager, user)
+        AuthTestManager().test_auth(user)
         return True
 
     def refresh(self, user):
-        manager = AuthTestManager()
-        test.delay(manager, user)
+        AuthTestManager().test_auth(user)
