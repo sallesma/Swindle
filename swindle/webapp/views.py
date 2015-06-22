@@ -22,10 +22,9 @@ def dashboard(request):
     return render(request, 'dashboard.html', data)
 
 @login_required(login_url="/")
-def refresh(request):
+def refresh(request, service='all'):
     user = request.user
-    manager = UserManager()
-    manager.refresh(user)
+    UserManager().refresh(user, service)
     return HttpResponseRedirect("/dashboard")
 
 def register(request):

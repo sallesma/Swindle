@@ -24,8 +24,10 @@ class UserManager:
         auth_tests = AuthTests(user=user)
         auth_tests.save()
 
-        AuthTestManager().test_auth(user)
+        AuthTestManager().test_all(user)
         return True
 
-    def refresh(self, user):
-        AuthTestManager().test_auth(user)
+    def refresh(self, user, service):
+        func = getattr(AuthTestManager, "test_%s" % service, None)
+        if func:
+            func(AuthTestManager(), user)
