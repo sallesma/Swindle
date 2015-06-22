@@ -99,6 +99,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Custom test runner
+TEST_RUNNER = "webapp.tests.swindle_test_runner.NoLoggingTestRunner" 
 
 LOGGING = {
     'version': 1,
