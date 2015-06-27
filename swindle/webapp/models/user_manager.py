@@ -31,3 +31,5 @@ class UserManager:
         func = getattr(AuthTestManager, "test_%s" % service, None)
         if func:
             func(AuthTestManager(), user)
+        else:
+            logger.info("Tried to refresh unknown service %s for user: %s" % (service, user.username))
